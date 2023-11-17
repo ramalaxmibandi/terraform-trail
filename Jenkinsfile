@@ -49,7 +49,7 @@ pipeline {
             }
         }
        stage('Generate Ansible Files') {
-            steps {
+            steps { sh "chmod +x -R ${env.WORKSPACE}"
                 script {
                     // Execute the shell script
                     sh './generate_ansible_files.sh'
